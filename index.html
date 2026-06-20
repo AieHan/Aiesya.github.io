@@ -733,20 +733,25 @@
             transition: var(--transition-smooth);
             padding: 1rem;
             text-align: center;
+            overflow: hidden;
         }
         .evidence-card .evidence-image:hover {
             border-color: var(--accent-primary);
             color: var(--text-primary);
             box-shadow: 0 0 30px var(--accent-glow);
         }
-        .evidence-card .evidence-image i {
-            font-size: 3rem;
-            margin-bottom: 0.5rem;
-            color: var(--accent-primary);
+        .evidence-card .evidence-image img {
+            width: 100%;
+            height: auto;
+            border-radius: var(--radius-sm);
+            object-fit: cover;
+            display: block;
         }
-        .evidence-card .evidence-image .placeholder-text {
-            font-size: 0.8rem;
-            color: var(--text-muted);
+        /* Fallback if image missing */
+        .evidence-card .evidence-image .fallback-icon {
+            font-size: 3rem;
+            color: var(--accent-primary);
+            margin-bottom: 0.5rem;
         }
         .evidence-card .evidence-body {
             flex: 1;
@@ -784,7 +789,7 @@
             font-weight: bold;
         }
 
-        /* ---------- TIMELINE (replaced, kept for fallback) ---------- */
+        /* ---------- TIMELINE ---------- */
         .timeline {
             display: flex;
             flex-direction: column;
@@ -1053,7 +1058,7 @@
             <section id="section-home" class="section active">
                 <div class="profile-header">
                     <div class="avatar-wrapper" id="avatarTrigger">
-                       <img src="images/profile.jpg" alt="Profile" />
+                        <img src="./images/profile.jpg" alt="Profile Photo" />
                         <span class="avatar-hint"><i class="fas fa-camera"></i> Click Biodata</span>
                     </div>
                     <div class="name-title">
@@ -1066,6 +1071,7 @@
                 <div class="profile-section">
                     <strong>Professional Profile</strong>
                     Analytical and detail-oriented final-year Computer Science student with a focused specialization in Network Security. Possesses a robust technical foundation in network defense, cybersecurity operations, packet-level forensics, and infrastructure hardening. Academic experience encompasses practical implementations of network monitoring systems, secure communication protocols, embedded systems security, and the deployment of threat-mitigation solutions.
+                </div>
 
                 <!-- Objective -->
                 <div class="objective-section">
@@ -1216,7 +1222,6 @@
                             <li>Able to design and troubleshoot small to medium-sized network environments</li>
                         </ul>
                     </div>
-                    <!-- Replaced Network Simulation with Penetration Testing -->
                     <div class="skill-item">
                         <div class="skill-header"><span class="skill-name">Penetration Testing</span><span class="skill-level">Intermediate</span></div>
                         <ul class="skill-evidence">
@@ -1343,7 +1348,7 @@
                 <h3><i class="fas fa-flag"></i> Career Goal</h3>
                 <div class="placeholder-content" style="margin-bottom:1.5rem;">
                     <strong>Desired Career: SOC Analyst</strong><br />
-                    A SOC Analyst is responsible for monitoring security alerts, detecting cyber threats,investigating incidents, analyzing logs, and responding to security events to protect an organization's systems and data
+                    A SOC Analyst is responsible for monitoring security alerts, detecting cyber threats, investigating incidents, analyzing logs, and responding to security events to protect an organization's systems and data.
                 </div>
                 <h3><i class="fas fa-certificate"></i> Certifications Roadmap</h3>
                 <h4>Short-Term (0–2 Years)</h4>
@@ -1400,9 +1405,8 @@
                 <!-- CCNA Course Description -->
                 <div class="evidence-card">
                     <div class="evidence-image">
-    <img src="images/ccna.png" alt="CCNA Certificate"
-         style="width:100%; border-radius:10px;">
-</div>
+                        <img src="./images/ccna.png" alt="CCNA Certificate" />
+                    </div>
                     <div class="evidence-body">
                         <h4><i class="fas fa-cisco"></i> CCNA: Switching, Routing, and Wireless Essentials</h4>
                         <div class="course-desc">
@@ -1421,12 +1425,11 @@
                     </div>
                 </div>
 
-                <!-- New: Wireshark Project -->
+                <!-- Wireshark Project -->
                 <div class="evidence-card">
                     <div class="evidence-image">
-    <img src="images/wireshark.png" alt="Wireshark"
-         style="width:100%; border-radius:10px;">
-</div>
+                        <img src="./images/wireshark.png" alt="Wireshark" />
+                    </div>
                     <div class="evidence-body">
                         <h4><i class="fas fa-network-wired"></i> Network Traffic Analysis with Wireshark</h4>
                         <div class="course-desc">
@@ -1442,12 +1445,11 @@
                     </div>
                 </div>
 
-                <!-- New: Web Application Security Testing (Brutal/Burp Suite) -->
+                <!-- Web Application Security Testing -->
                 <div class="evidence-card">
                     <div class="evidence-image">
-    <img src="images/brutal.png" alt="Penetration Testing"
-         style="width:100%; border-radius:10px;">
-</div>
+                        <img src="./images/brutal.png" alt="Penetration Testing" />
+                    </div>
                     <div class="evidence-body">
                         <h4><i class="fas fa-code"></i> Web Application Security Testing &amp; Brute Force</h4>
                         <div class="course-desc">
@@ -1463,12 +1465,11 @@
                     </div>
                 </div>
 
-                <!-- New: Autopsy Project -->
+                <!-- Autopsy Project -->
                 <div class="evidence-card">
                     <div class="evidence-image">
-    <img src="images/autopsy.png" alt="Autopsy"
-         style="width:100%; border-radius:10px;">
-</div>
+                        <img src="./images/autopsy.png" alt="Autopsy" />
+                    </div>
                     <div class="evidence-body">
                         <h4><i class="fas fa-database"></i> Digital Forensics Investigation with Autopsy</h4>
                         <div class="course-desc">
